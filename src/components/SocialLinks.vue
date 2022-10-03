@@ -2,9 +2,9 @@
   <!-- liens sociaux -->
   <div>
     <div class="social-buttons">
-      <!-- <a href="https://github.com/nsWilfried" target="_blank" class="social-buttons__button social-button social-button--github" aria-label="GitHub">
+      <a href="https://github.com/nsWilfried" target="_blank" class="social-buttons__button social-button social-button--github" aria-label="GitHub">
                 <font-awesome-icon icon="fab fa-github" />
-            </a> -->
+            </a>
 
       <a href="https://www.linkedin.com/in/wilfried-n-soukpoe-2b41a8245/" target="_blank"
         class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
@@ -15,9 +15,9 @@
                 <font-awesome-icon icon="fab fa-snapchat-ghost"/>
             </a> -->
 
-      <!-- <a href="#" class="social-buttons__button social-button social-button--codepen" aria-label="CodePen">
+      <a href="#" class="social-buttons__button social-button social-button--codepen" aria-label="CodePen">
                 <font-awesome-icon icon="fab fa-codepen" />
-            </a> -->
+            </a>
     </div>
 
   </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="vertical_menu bg--300 grid grid-rows-6 h-full w-48">
+        <div class="vertical_menu   bg--300 grid grid-rows-6 h-full w-48">
 
             <!-- logo -->
             <div class="vertical_menu_logo flex row-span-1 justify-center items-center bg-red-400">

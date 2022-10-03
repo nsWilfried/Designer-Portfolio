@@ -62,7 +62,9 @@
 <script>
 import Button from "@/components/Button.vue"
 export default {
-    components: { Button }
+    components: { Button }, 
+    mounted(){
+    }
 }
 </script>
 <style lang="scss">

@@ -5,12 +5,15 @@
         <div class="contact_form_container flex justify-center items-center bg--300">
             <div class="contact_form">
                 <!-- title -->
-                <div class="contact_form_title w-full p-4 bg--300">
+                <div class="contact_form_title border p-8 w-full flex justify-center items-center bg--300">
 
-                    <span class="text-4xl">
+                    <span class="text-6xl uppercase">
                         <span class="section_number">05.</span>
                         <span>Contactez Moi</span>
+                        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+
                     </span>
+
                 </div>
 
                 <!-- description -->
