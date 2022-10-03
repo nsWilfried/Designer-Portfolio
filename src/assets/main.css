@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities; 
+body{
+  font-family: "Fira Code";
+}
+
+.section_number {
+  color:#5a82fc;
+}
