@@ -6,6 +6,7 @@ const routes = [
         path: "/", 
         component: index
     }, 
+   
     // {
     //     path: '/:pathMatch(.*)*', name: 'NotFound', redirect: to => {
     //         return '/'
