@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;600&family=Montez&family=Space+Mono&display=swap');
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+ 
 body{
-  font-family: "Fira Code";
+  font-family: "Fira Code", "Helvetica", sans-serif;;
 }
 
 .section_number {

@@ -26,13 +26,16 @@ export default {
   letter-spacing: 1px;
   padding: 13px 50px 13px;
   outline: 0;
+  font-family: $primary-font;
+
   border: 3px solid $secondary-bg; //dark mode
 //   border: 1px solid white; //light mode
 
-  color: white;
+  // color: white;
   cursor: pointer;
   position: relative;
   z-index: 3;
+  // border-radius: 10px;
   
   background-color: rgba(0, 0, 0, 0);
 }
@@ -48,10 +51,11 @@ export default {
   top: 0px;
   left: 0px;
   transition: 0.2s;
-  font-family: 'Fira code';
 }
 
-
+.fill:hover {
+ color: white;
+}
 .fill:hover::before {
   top: 0px;
   left: 0px;

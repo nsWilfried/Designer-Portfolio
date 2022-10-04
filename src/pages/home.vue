@@ -3,7 +3,7 @@
 
         <!-- vertical navbar -->
         <VerticalMenu/>
-        <div class="w-full">
+        <div class="w-full all_pages">
             <router-view></router-view>
         </div>
 
@@ -17,5 +17,7 @@ export default {
 }
 </script>
 <style lang="scss">
-    
+    .all_pages {
+        margin-left: 192px;
+    }
 </style>

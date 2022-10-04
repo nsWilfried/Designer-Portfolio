@@ -16,18 +16,16 @@
                             <div class="mr-auto place-self-center ">
 
 
-                                <h1 class="text-3xl text-red-400 uppercase pb-3" style="font-family: 'Fira Code';">Hi_
-                                    👋 ,
-                                    je suis </h1>
+                                <h1 class="text-7xl text-indigo-400 uppercase pb-3" style="font-family: 'Fira Code';">Hi 👋 there,  </h1>
 
                                 <!-- name and position -->
-                                <h1 style="color: #2C3E50; "
-                                    class=" text- mb-4 header__title text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
-                                    Wilfried N'SOUKPOE </h1>
                                 <h1
-                                    class=" mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-7xl">
-                                    Full Stack Web Developer<span class="text-" style="color: #2C3E50;">.( )</span>
-                                </h1>
+                                    class=" text- mb-4 header__title uppercase text- text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
+                                    I"M Joel </h1>
+                                <span
+                                    class="uppercase mt-4 mb-4 p-2 h-auto font-medium bg-indigo-400 text-white px-2  md:text-4xl ">
+                                    Graphic designer 
+                                </span>
 
                                 <!-- description of myself -->
                                 <p class="max-w-2xl mb-6 secondary-font font-lightlg:mb-8 md:text-lg lg:text-xl"
@@ -40,7 +38,7 @@
 
                                 <!-- Get in touch button -->
                                 <div>
-                                    <Button class="uppercase" text="Me contacter" link="#contact" />
+                                    <Button class="uppercase font-extrabold" text="En savoir plus" link="/design" />
                                 </div>
                             </div>
 
@@ -70,9 +68,9 @@ export default {
 <style lang="scss">
 @import "../assets/scss/variables";
 
-.home_page {
-    background-color: $primary-bg ;
-}
+// .home_page {
+//     background-color: $primary-bg ;
+// }
 
 .hero_section {
     width: 90%;

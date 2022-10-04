@@ -1,26 +1,18 @@
 <template>
-    <div class="about_page w-full bg-green-400 h-screen grid grid-cols-2">
-        <div class="flex justify-center items-center">
+    <div class="about_page w-full bg--400 h-screen grid grid-cols-2">
+        <div class="about_container flex justify-center items-center">
             <div class="about_content">
                 <!-- title -->
-                <div class="contact_form_title w-full  bg--300 border flex- justify-center items-center p-8">
-                    <span class="uppercase text-6xl">
-                        <span class="section_number">02.</span>
-                        <span>About Me</span>
-                    </span>
-                    <div class="h-1 w-20 bg-indigo-500 rounded"></div>
-
-                </div>
-
+                <SectionTitle text="About" index="2" />
                 <!-- description -->
-                <div class="contact_form_description p-4 w-full bg--300 text-gray-500">
+                <div class="contact_form_description p-8 w-full  bg--300 text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ipsum velit laudantium suscipit
                     earum eum harum asperiores ipsa unde! Placeat, deserunt ut esse enim repellat repellendus commodi
                     praesentium molestiae officiis aspernatur recusandae modi omnis culpa facere nulla molestias
                     voluptatibus, aliquam totam libero perspiciatis! Sed, ab. Quaerat asperiores ullam ipsam at.
                 </div>
 
-                <div class="contact_form_description p-4 w-full bg--300  text-gray-500">
+                <div class="contact_form_description p-8 w-full bg--300  text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo dolores dolore provident incidunt
                     fugiat. Libero nihil consectetur iusto provident earum esse ipsum quo molestiae deleniti cumque,
                     atque quidem quae ab sint, voluptatibus aliquid eum, odio dolore impedit autem asperiores. Veritatis
@@ -31,13 +23,14 @@
 
             </div>
         </div>
-        <div class="bg-green-400 w-full h-screen  joel_image"></div>
+        <div class="bg--400  w-full h-screen joel_image"></div>
     </div>
 </template>
 <script>
 import SocialLinks from './SocialLinks.vue';
+import SectionTitle from './SectionTitle.vue';
 export default {
-    components: { SocialLinks }
+    components: { SocialLinks, SectionTitle }
 }
 </script>
 <style lang="scss">
@@ -45,17 +38,36 @@ export default {
 
 .about_content {
     width: 90%;
-    color: white;
-    // background-color: antiquewhite;
     z-index: 1;
 }
 
-.about_page {
-    background-color: $primary-bg;
-}
+// .about_container {
+//     // background-color: $primary-bg;
+// }
+
+// .about_page {
+//     // background-color: $secondary-bg;
+// }
 .joel_image {
     background-image: url("../public/image.jpeg");
     background-size: cover;
+    background-position: center;
     object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        mix-blend-mode: normal;
+        transition: all 0.5s;
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+    }
 }
 </style>

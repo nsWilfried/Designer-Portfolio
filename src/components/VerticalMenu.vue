@@ -3,24 +3,28 @@
         <div class="vertical_menu   bg--300 grid grid-rows-6 h-full w-48">
 
             <!-- logo -->
-            <div class="vertical_menu_logo flex row-span-1 justify-center items-center bg-red-400">
-                <span>logo</span>
-            </div>
+            <routerLink to="/" class="vertical_menu_logo flex row-span-1 justify-center items-center text-white ">
+                <span class="text-5xl" style="font-family: Montez;">Fantôme</span>
+            </routerLink>
 
             <!-- links -->
-            <div class="vertical_menu_links flex justify-center items-center row-span-4 bg--500">
+            <div class="vertical_menu_links flex justify-center items-center row-span-5 bg--500">
                 <div class="bg--400 w-full h-auto">
                     <nav>
-                        <routerLink :to="`${link.link}`" class="nav_link w-full flex justify-center items-center " v-for="(link, index) in navLinks" :key="index">
-                           <div style="color:#5a82fc ;" class="mr-1">0{{index+1}}. </div>
-                           <div>{{link.name}}</div>
+                        <routerLink :to="`${link.link}`"
+                            class="nav_link text-xl w-full flex uppercase   justify-center items-center "
+                            v-for="(link, index) in navLinks" :key="index">
+                            <!-- <div style="color:#5a82fc ;" >0{{index+1}}. </div> -->
+                            <div>{{link.name}}</div>
                         </routerLink>
                     </nav>
                 </div>
             </div>
 
             <!-- socials links -->
-            <SocialLinks/>
+            <div class="p-4">
+                <SocialLinks />
+            </div>
         </div>
 
     </div>
@@ -36,7 +40,7 @@ export default {
                     link: "/"
                 },
                 {
-                    name: "About Me",
+                    name: "About",
                     link: "/design/"
                 },
                 {
@@ -58,22 +62,81 @@ export default {
 }
 </script>
 <style lang="scss">
-    @import "../assets/scss/variables"; 
-    .nav_link {
-        padding: 20px;
-        border-top: 1px solid #293557 ;
-        cursor: pointer;
+@import "../assets/scss/variables";
+
+.nav_link {
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-family: $primary-font;
+    &:hover {
+        background-color: $third-bg;
+        color: white;
         transition: all 0.3s;
 
-        &:hover {
-            background-color: #2d4583; 
-            color: white;
-            transition: all 0.3s;
+        &::before {
+            background-color: $third-bg ;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 3px;
+        width: 50px;
+        transform: rotate(90deg);
+        background-color: $third-bg;
+    }
+    &:nth-child(1){
+        ::after{
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: $secondary-bg;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+            left: 46.4%;
+        }
+    }
+    &:nth-last-child(1) {
+        ::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 37%;
+            height: 2px;
+            width: 50px;
+            transform: rotate(90deg);
+            background-color: $third-bg;
+
+        }
+
+        ::after {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: $secondary-bg;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -35px;
+            left: 46.5%;
 
         }
     }
-    .vertical_menu {
-        background-color: #293557;
-        color: white;
+
+}
+
+.vertical_menu {
+    background-color: $primary-bg;
+    color: white;
+    position: fixed;
+    height: 100vh;
+
+    &_logo {
+        background-color: $third-bg;
     }
+}
 </style>
