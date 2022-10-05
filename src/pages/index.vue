@@ -4,23 +4,23 @@
         <div class="home_page w-full h-screen  grid grid-cols-2">
 
             <!-- hero section -->
-            <div class="w-full bg-200 flex justify-end items-center">
+            <div class="hero_section_container w-full bg-200 flex justify-end items-center">
 
                 <div class="hero_section flex justify-center items-center ">
 
                     <!-- hero section -->
-                    <section>
+                    <section class="bg--400">
                         <div class=" max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 ">
 
                             <!-- personnal information -->
                             <div class="mr-auto place-self-center ">
 
 
-                                <h1 class="text-7xl text-indigo-400 uppercase pb-3" style="font-family: 'Fira Code';">Hi 👋 there,  </h1>
+                                <h1 class="text-7xl header_hello text-indigo-400 uppercase pb-3 " style="font-family: 'Fira Code';">Hi 👋 there,  </h1>
 
                                 <!-- name and position -->
                                 <h1
-                                    class=" text- mb-4 header__title uppercase text- text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
+                                    class=" text- mb-4 header_title uppercase text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
                                     I"M Joel </h1>
                                 <span
                                     class="uppercase mt-4 mb-4 p-2 h-auto font-medium bg-indigo-400 text-white px-2  md:text-4xl ">
@@ -53,7 +53,7 @@
             </div>
 
             <!-- logo part -->
-            <div class="home_logo_section bg-red-300"></div>
+            <div class="home_logo_section bg--300"></div>
         </div>
     </div>
 </template>
@@ -82,5 +82,26 @@ export default {
     backdrop-filter: blur(10px);
     background-color: $secondary-bg ;
 
+}
+
+@media only screen and (min-width: 320px) and (max-width: 900px){
+    .home_logo_section{
+        display: none;
+    }
+    .home_page {
+        display: flex;
+        min-height: 100vh;
+        height: auto ;
+    }
+    .hero_section_container {
+        justify-content: center;
+    }
+    .header_hello{
+        font-size: 2em;
+    }
+    // .header_title{
+    //     font-size: 3emem;
+    // }
+    
 }
 </style>

@@ -20,4 +20,9 @@ export default {
     .all_pages {
         margin-left: 192px;
     }
+    @media only screen and (min-width: 320px) and (max-width: 1000px){
+    .all_pages{
+        margin-left: 0px;
+    }
+}
 </style>

@@ -70,4 +70,14 @@ export default {
         -moz-filter: grayscale(0%);
     }
 }
+@media only screen and (min-width: 320px) and (max-width: 1000px){
+    .about_page{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .contact_form_description{
+        padding: 10px;
+    }
+}
 </style>

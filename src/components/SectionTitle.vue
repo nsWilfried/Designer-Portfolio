@@ -26,4 +26,14 @@ export default {
     width: 90%;
     font-family: $primary-font;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 700px){
+    .section_title{
+        width: 95%;
+        > span {
+   font-size: 2.5em;
+
+        }
+    }
+}
 </style>
