@@ -1,9 +1,11 @@
 <template >
-    <div class="home_layout flex h-screen w-full bg-gree-400 ">
+    <div class="home_layout flex flex-col h-screen w-full bg-gree-400 ">
 
+        <!-- mobile navbar -->
+        <NavbarMobile class="navbar_mobile"/>
         <!-- vertical navbar -->
-        <VerticalMenu/>
-        <div class="w-full all_pages">
+        <VerticalMenu />
+        <div class="all_pages">
             <router-view></router-view>
         </div>
 
@@ -12,8 +14,9 @@
 <script>
 import About from '../components/About.vue';
 import VerticalMenu from '../components/VerticalMenu.vue';
+import NavbarMobile from '../components/NavbarMobile.vue';
 export default {
-    components: { About, VerticalMenu }
+    components: { About, VerticalMenu, NavbarMobile }
 }
 </script>
 <style lang="scss">

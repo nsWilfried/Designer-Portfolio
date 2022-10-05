@@ -1,5 +1,5 @@
 <template>
-    <div class="about_page w-full bg--400 h-screen grid grid-cols-2">
+    <div class="about_page w-full bg--400 h-auto min-h-screen grid grid-cols-2">
         <div class="about_container flex justify-center items-center">
             <div class="about_content">
                 <!-- title -->
@@ -23,7 +23,7 @@
 
             </div>
         </div>
-        <div class="bg--400  w-full h-screen joel_image"></div>
+        <div class="bg--400  w-full h-auto min-h-screen joel_image"></div>
     </div>
 </template>
 <script>
@@ -78,6 +78,9 @@ export default {
     }
     .contact_form_description{
         padding: 10px;
+    }
+    .joel_image{
+        margin-top: 30px;
     }
 }
 </style>

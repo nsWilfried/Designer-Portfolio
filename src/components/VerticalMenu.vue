@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="vertical_menu   bg--300 grid grid-rows-6 h-full w-48">
+        <div :class="{'vertical_menu':mobile==false}" class="bg--300 grid grid-rows-6 h-full w-48">
 
             <!-- logo -->
             <routerLink to="/" class="vertical_menu_logo flex row-span-1 justify-center items-center text-white ">
@@ -32,6 +32,9 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
 export default {
+    props: {
+        mobile: Boolean
+    } ,
     data() {
         return {
             navLinks: [
@@ -142,6 +145,10 @@ export default {
 @media only screen and (min-width: 320px) and (max-width: 1000px){
     .vertical_menu{
         display: none;
+        &_logo {
+            display: none ;
+        }
     }
+        
 }
 </style>

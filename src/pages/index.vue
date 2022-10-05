@@ -1,6 +1,8 @@
 <template>
     <div>
         <!-- home page -->
+        <NavbarMobile  class="navbar_mobile "/>
+
         <div class="home_page w-full h-screen  grid grid-cols-2">
 
             <!-- hero section -->
@@ -59,8 +61,9 @@
 </template>
 <script>
 import Button from "@/components/Button.vue"
+import NavbarMobile from "../components/NavbarMobile.vue";
 export default {
-    components: { Button }, 
+    components: { Button, NavbarMobile }, 
     mounted(){
     }
 }
@@ -71,6 +74,9 @@ export default {
 // .home_page {
 //     background-color: $primary-bg ;
 // }
+.navbar_mobile {
+    display: none;
+}
 
 .hero_section {
     width: 90%;
@@ -85,6 +91,9 @@ export default {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 900px){
+    .navbar_mobile{
+        display: flex ;
+    }
     .home_logo_section{
         display: none;
     }
