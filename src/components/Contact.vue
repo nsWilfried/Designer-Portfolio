@@ -4,14 +4,14 @@
         <!-- contact form container  -->
         <div class="contact_form_container flex flex-col justify-center items-center bg--300">
             <!-- section title -->
-            <SectionTitle text="Contact" index="6" class="bg--300" />
+            <SectionTitle text="Contact"  index="6" class="contact_element bg--300" />
 
             <section class="text-gray-600 flex  bg--400">
                 <div class="container px-5  mx-auto flex sm:flex-nowrap flex-wrap">
 
                     <!-- google map -->
                     <div
-                        class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+                        class=" contact_element lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                         <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map"
                             marginheight="0" marginwidth="0" scrolling="no"
                             src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
@@ -31,13 +31,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- contact form  -->
                     <div class="lg:w-1/3 md:w-1/2 bg- flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contactez-moi</h2>
-                        <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo
+                        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font contact_element">Contactez-moi</h2>
+                        <p class="leading-relaxed mb-5 text-gray-600 contact_element">Post-ironic portland shabby chic echo park, banjo
                             fashion axe</p>
                         <div class="p-4 w-full mx-auto">
                             <div class="flex flex-wrap -m-2">
-                                <div class=" w-1/2">
+                                <div class=" w-1/2 contact_element">
                                     <div class="relative">
                                         <label for="name" class="leading-7 text-sm text-gray-600">Nom</label>
                                         <input type="text" id="name" name="name" v-model="values.name"
@@ -47,7 +49,7 @@
                                         <span class="pt-2 text-indigo-400">{{ errors.name }}</span>
                                     </div>
                                 </div>
-                                <div class="pl-2 w-1/2">
+                                <div class="pl-2 w-1/2  contact_element">
                                     <div class="relative">
                                         <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
                                         <input type="email" id="email" name="email" v-model="values.email"
@@ -56,7 +58,7 @@
                                         <span class="pt-2 text-indigo-400">{{ errors.email }}</span>
                                     </div>
                                 </div>
-                                <div class=" w-full">
+                                <div class=" w-full  contact_element">
                                     <div class="relative">
                                         <label for="subject" class="leading-7 text-sm text-gray-600">Sujet</label>
                                         <input type="text" id="subject" name="subject" v-model="values.subject"
@@ -65,7 +67,7 @@
                                         <span class="pt-2 text-indigo-400">{{ errors.subject }}</span>
                                     </div>
                                 </div>
-                                <div class=" w-full">
+                                <div class=" w-full  contact_element">
                                     <div class="relative">
                                         <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
                                         <textarea id="message" name="message" v-model="values.message"
@@ -74,7 +76,7 @@
                                         <span class="pt-2 text-indigo-400">{{ errors.message }}</span>
                                     </div>
                                 </div>
-                                <div class="contact__button p-2 bg--400 w-full ">
+                                <div class=" contact_element contact__button py-2 bg--400 w-full ">
                                     <!-- boutton d'envoi de l'email -->
                                     <Button text="Envoyer" class="uppercase" @click="sendMeEmail()" />
                                 </div>
@@ -95,7 +97,7 @@
 <script>
 // components
 import Button from "./Button.vue";
-
+import gsap from "gsap"
 import { object, string } from "yup";
 import SectionTitle from "./SectionTitle.vue";
 export default {
@@ -169,6 +171,18 @@ export default {
                 });
         },
     },
+
+    mounted(){
+        const tl = gsap.timeline(); 
+        tl.from('.contact_element', {
+            duration: 1, 
+            opacity: 0, 
+            y: 20, 
+            ease: "Expo.easeInOut", 
+            stagger:0.2
+
+        })
+    }
 };
 </script>
 <style lang="scss">
@@ -180,8 +194,4 @@ export default {
 
 }
 
-// .contact_page {
-//     // background-color: $primary-bg;
-//     // color: white;
-// }
 </style>

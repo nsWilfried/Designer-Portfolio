@@ -3,16 +3,16 @@
         <div class="about_container flex justify-center items-center">
             <div class="about_content">
                 <!-- title -->
-                <SectionTitle text="About" index="2" />
+                <SectionTitle class="about_element" text="About" index="2" />
                 <!-- description -->
-                <div class="contact_form_description p-8 w-full  bg--300 text-gray-500">
+                <div class="about_element contact_form_description p-8 w-full  bg--300 text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ipsum velit laudantium suscipit
                     earum eum harum asperiores ipsa unde! Placeat, deserunt ut esse enim repellat repellendus commodi
                     praesentium molestiae officiis aspernatur recusandae modi omnis culpa facere nulla molestias
                     voluptatibus, aliquam totam libero perspiciatis! Sed, ab. Quaerat asperiores ullam ipsam at.
                 </div>
 
-                <div class="contact_form_description p-8 w-full bg--300  text-gray-500">
+                <div class="about_element contact_form_description p-8 w-full bg--300  text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo dolores dolore provident incidunt
                     fugiat. Libero nihil consectetur iusto provident earum esse ipsum quo molestiae deleniti cumque,
                     atque quidem quae ab sint, voluptatibus aliquid eum, odio dolore impedit autem asperiores. Veritatis
@@ -29,8 +29,19 @@
 <script>
 import SocialLinks from './SocialLinks.vue';
 import SectionTitle from './SectionTitle.vue';
+import gsap from "gsap"
 export default {
-    components: { SocialLinks, SectionTitle }
+    components: { SocialLinks, SectionTitle }, 
+    mounted(){
+        const tl = gsap.timeline();
+        tl.from(".about_element",{
+            duration :1, 
+            opacity: 0, 
+            y:40, 
+            ease: 'Expo.easeInOut', 
+            stagger: 0.2
+        })
+    }
 }
 </script>
 <style lang="scss">

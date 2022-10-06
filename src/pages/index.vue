@@ -18,19 +18,19 @@
                             <div class="mr-auto place-self-center ">
 
 
-                                <h1 class="text-7xl header_hello text-indigo-400 uppercase pb-3 " style="font-family: 'Fira Code';">Hi 👋 there,  </h1>
+                                <h1 class="text-7xl header_element header_hello text-indigo-400 uppercase pb-3 " style="font-family: 'Fira Code';">Hi 👋 there,  </h1>
 
                                 <!-- name and position -->
                                 <h1
-                                    class=" text- mb-4 header_title uppercase text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
+                                    class="header_element text- mb-4 header_title uppercase text-7xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-7xl">
                                     I"M Joel </h1>
                                 <span
-                                    class="uppercase mt-4 mb-4 p-2 h-auto font-medium bg-indigo-400 text-white px-2  md:text-4xl ">
+                                    class="header_element header_position uppercase mt-4 mb-4 p-2 h-auto font-medium bg-indigo-400 text-white px-2  md:text-4xl ">
                                     Graphic designer 
                                 </span>
 
                                 <!-- description of myself -->
-                                <p class="max-w-2xl mb-6 secondary-font font-lightlg:mb-8 md:text-lg lg:text-xl"
+                                <p class="header_element max-w-2xl mb-6 header_description secondary-font font-lightlg:mb-8 md:text-lg lg:text-xl"
                                     style="padding-top: 20px;padding-bottom:20px;color: #5D6D7E;  ">
                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde consequuntur,
                                     dignissimos
@@ -39,7 +39,7 @@
                                     reiciendis minima ipsam ad atque alias.</p>
 
                                 <!-- Get in touch button -->
-                                <div>
+                                <div class="header_button header_element">
                                     <Button class="uppercase font-extrabold" text="En savoir plus" link="/design" />
                                 </div>
                             </div>
@@ -55,16 +55,25 @@
             </div>
 
             <!-- logo part -->
-            <div class="home_logo_section bg--300"></div>
+            <div class="home_logo_section bg--300 joel_image"></div>
         </div>
     </div>
 </template>
 <script>
 import Button from "@/components/Button.vue"
 import NavbarMobile from "../components/NavbarMobile.vue";
+import gsap from "gsap"
 export default {
     components: { Button, NavbarMobile }, 
     mounted(){
+        const tl = gsap.timeline();
+        tl.from(".header_element", {
+            duration: 1, 
+            y: 40, 
+            opacity: 0, 
+            ease: "Expo.easeInOut", 
+            stagger: 0.2
+        })
     }
 }
 </script>
@@ -90,7 +99,7 @@ export default {
 
 }
 
-@media only screen and (min-width: 320px) and (max-width: 900px){
+@media only screen and (min-width: 320px) and (max-width: 1000px){
     .navbar_mobile{
         display: flex ;
     }

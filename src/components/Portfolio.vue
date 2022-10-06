@@ -3,9 +3,9 @@
     <div class="w- h-auto min-h-screen portfolio_page">
 
         <!-- section title -->
-        <SectionTitle index="3" text="Portfolio" />
+        <SectionTitle index="3" class="portfolio_element" text="Portfolio" />
         <!-- filter buttons -->
-        <div class="text-gray-600 bg--200 projects-categories w-full uppercase bg--400 flex justify-around">
+        <div class="text-gray-600 bg--200 portfolio_element projects-categories w-full uppercase bg--400 flex justify-around">
             <div class="flex text-xl justify-around">
                 <button class="uppercase px-4 py-2 mixitup-control-active" data-filter="*">Tout</button>
                 <button class="uppercase px-4 py-2" data-filter=".djlf">Graphic design</button>
@@ -24,7 +24,7 @@
                 <div :settings="{ speed: 500, plugins: plugins }" :onInit="onInit" :onBeforeSlide="onBeforeSlide"
                     class="container w-full bg--400 flex justity-center flex-wrap">
                     <div v-for="(item, index) in projects" :key="index"
-                        class="project_container xl:w-1/4 md:w-1/2 p-4  mix" :class="{'box': item.hello==true}">
+                        class="project_element project_container xl:w-1/4 md:w-1/2 p-4  mix" :class="{'box': item.hello==true}">
                         <lightgallery :settings="{ speed: 500, plugins: plugins }" :onInit="onInit" :onBeforeSlide="onBeforeSlide" class=" bg-gray-100   rounded-lg">
                             <img class="h-44 rounded w-full object-cover object-center mb-6"
                                 src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="content">
@@ -44,6 +44,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import SectionTitle from "./SectionTitle.vue";
 import styles from 'lightgallery/scss/lightgallery.scss';
+import gsap from "gsap"
 export default {
     components: {
         Lightgallery, SectionTitle
@@ -90,7 +91,21 @@ export default {
     },
     mounted() {
         let mix = mixitup(".container");
+        const tl = new gsap.timeline()
+        tl.from('.portfolio_element', {
+            duration: 1, 
+            opacity: 0, 
+            y: 20, 
+            ease: "Expo.easeInOut", 
+            stagger:0.2
 
+        }).from(".project_element", {
+            duration: 1, 
+            opacity: 0, 
+            y: 20, 
+            ease: "Expo.easeInOut", 
+            stagger: 0.2
+        })
     },
     methods: {
         

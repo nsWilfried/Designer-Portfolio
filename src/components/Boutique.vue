@@ -2,10 +2,10 @@
     <div class="w- min-h-screen portfolio_page">
         
         <!-- section title -->
-        <SectionTitle text="boutique" index="4"/>
+        <SectionTitle text="boutique" class="boutique_element" index="4"/>
 
         <!-- filter buttons -->
-        <div class="text-gray-600 projects-categories w-full uppercase bg--400 flex justify-around">
+        <div class="text-gray-600 boutique_element projects-categories w-full uppercase bg--400 flex justify-around">
             <div class="flex text-xl justify-around">
                 <button :key="index" class=" px-4 py-2 uppercase mixitup-control-active" data-filter="*">Tout</button>
                 <button v-for="(item, index) in filterButtons" class="px-4 py-2 uppercase "
@@ -21,11 +21,11 @@
 
 
 
-            <!-- portfolio_projects -->
+            <!-- portfolio_boutique -->
             <div class=" px-5 py-24 mx-auto">
 
                 <div class="container justify-center w-full bg--400 flex flex-wrap">
-                    <div v-for="(item, index) in projects" :key="index" class=" xl:w-1/4 md:w-1/2 p-4 mix"
+                    <div v-for="(item, index) in boutique" :key="index" class="boutique_product_element xl:w-1/4 md:w-1/2 p-4 mix"
                         :class="{'box': item.hello==true}">
                         <div class=" bg-gray-100    p-6 rounded-lg">
                             <img class="h-40 rounded w-full object-cover object-center mb-6"
@@ -45,10 +45,11 @@
 <script>
 import mixitup from "mixitup"
 import SectionTitle from "./SectionTitle.vue";
+import gsap from "gsap"
 export default {
     data() {
         return {
-            projects: [
+            boutique: [
                 {
                     img: "https://picsum.photos/id/237/200/300",
                     hello: true,
@@ -105,6 +106,21 @@ export default {
     },
     mounted() {
         let mix = mixitup(".container");
+        let tl = gsap.timeline();
+        tl.from('.boutique_element', {
+            duration: 1, 
+            opacity: 0, 
+            y: 20, 
+            ease: "Expo.easeInOut", 
+            stagger:0.2
+
+        }).from(".boutique_product_element", {
+            duration: 1, 
+            opacity: 0, 
+            y: 20, 
+            ease: "Expo.easeInOut", 
+            stagger: 0.2
+        })
     },
     components: { SectionTitle }
 }
@@ -114,20 +130,12 @@ export default {
 
 
 
-// .project {
-//     width: 300px;
-//     height: 300px;
-//     border: 1px solid white;
-// }
-
-
-
-.projects-categories>div {
+.boutique-categories>div {
     width: 80%;
     // background-color: blue;
 }
 
-.projects-categories button.mixitup-control-active {
+.boutique-categories button.mixitup-control-active {
     color: white;
 }
 </style>
