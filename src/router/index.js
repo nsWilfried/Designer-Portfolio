@@ -35,16 +35,17 @@ const routes = [
             },
 
         ]
-    }
+    }, 
 
-    // {
-    //     path: '/:pathMatch(.*)*', name: 'NotFound', redirect: to => {
-    //         return '/'
-    //     }
-    // },
+    {
+        path: '/:pathMatch(.*)*', name: 'NotFound', redirect: to => {
+            return '/'
+        }
+    },
 ]
 const router = new createRouter({
     history: createWebHistory(), 
-    routes
+    routes, 
+    linkExactActiveClass: "router-active-class"
 })
 export default router

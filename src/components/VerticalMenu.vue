@@ -11,7 +11,7 @@
             <div class="vertical_menu_links flex justify-center items-center row-span-5 bg--500">
                 <div class="bg--400 w-full h-auto">
                     <nav>
-                        <routerLink :to="`${link.link}`"
+                        <routerLink :to="link.link"
                             class="nav_link text-xl w-full flex uppercase   justify-center items-center "
                             v-for="(link, index) in navLinks" :key="index">
                             <!-- <div style="color:#5a82fc ;" >0{{index+1}}. </div> -->
@@ -66,6 +66,7 @@ export default {
 </script>
 <style lang="scss">
 @import "../assets/scss/variables";
+
 
 .nav_link {
     padding: 30px;

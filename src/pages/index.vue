@@ -1,5 +1,6 @@
 <template>
     <div>
+        <FloatingNavbar/>
         <!-- home page -->
         <NavbarMobile  class="navbar_mobile "/>
 
@@ -63,8 +64,9 @@
 import Button from "@/components/Button.vue"
 import NavbarMobile from "../components/NavbarMobile.vue";
 import gsap from "gsap"
+import FloatingNavbar from "../components/FloatingNavbar.vue";
 export default {
-    components: { Button, NavbarMobile }, 
+    components: { Button, NavbarMobile, FloatingNavbar }, 
     mounted(){
         const tl = gsap.timeline();
         tl.from(".header_element", {

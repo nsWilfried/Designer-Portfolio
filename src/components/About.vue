@@ -64,7 +64,7 @@ export default {
     background-size: cover;
     background-position: center;
     object-fit: cover;
-    mix-blend-mode: multiply;
+    // mix-blend-mode: multiply;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -74,7 +74,7 @@ export default {
 
     &:hover {
         cursor: pointer;
-        mix-blend-mode: normal;
+        // mix-blend-mode: normal;
         transition: all 0.5s;
         filter: grayscale(0%);
         -webkit-filter: grayscale(0%);

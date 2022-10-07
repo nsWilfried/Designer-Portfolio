@@ -88,14 +88,9 @@
             </section>
         </div>
 
-
-        <!-- google maps
-        <div class="bg-green-300">
-        </div> -->
     </div>
 </template>
 <script>
-// components
 import Button from "./Button.vue";
 import gsap from "gsap"
 import { object, string } from "yup";
@@ -182,16 +177,14 @@ export default {
             stagger:0.2
 
         })
+        console.log("quelque chose cloche par ici ")
     }
 };
 </script>
-<style lang="scss">
-@import "../assets/scss/variables";
+<style lang="scss" scoped>
 
 .contact_form {
     width: 90%;
-    // background-color: orange;
-
 }
 
 </style>
