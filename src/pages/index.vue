@@ -65,8 +65,14 @@ import Button from "@/components/Button.vue"
 import NavbarMobile from "../components/NavbarMobile.vue";
 import gsap from "gsap"
 import FloatingNavbar from "../components/FloatingNavbar.vue";
+
 export default {
-    components: { Button, NavbarMobile, FloatingNavbar }, 
+    components: { Button, NavbarMobile, FloatingNavbar },
+    metaInfo(){
+        return {
+            title:"hell isjkdlf"
+        }
+    }, 
     mounted(){
         const tl = gsap.timeline();
         tl.from(".header_element", {

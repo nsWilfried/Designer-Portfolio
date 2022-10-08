@@ -9,10 +9,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {createMetaManager} from "vue-meta"
 library.add(fas, far, fab)
 const app = createApp(App)
 app.use(router)
 app.use(VueSweetalert2);
+app.use(createMetaManager())
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')

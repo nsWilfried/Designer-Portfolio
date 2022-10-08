@@ -32,6 +32,11 @@ import SectionTitle from './SectionTitle.vue';
 import gsap from "gsap"
 export default {
     components: { SocialLinks, SectionTitle }, 
+    metaInfo(){
+        return {
+            title:"hell isjkdlf"
+        }
+    },
     mounted(){
         const tl = gsap.timeline();
         tl.from(".about_element",{
